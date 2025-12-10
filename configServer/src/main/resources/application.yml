@@ -3,6 +3,10 @@ spring:
     name: config-Server
   profiles:
     active: native
+#  security:
+#    user:
+#      name: user1
+#      password: password1
   cloud:
     config:
       server:
