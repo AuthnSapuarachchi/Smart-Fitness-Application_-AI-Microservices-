@@ -1,0 +1,26 @@
+import axios from "axios";
+
+const API_URL = "http://localhost:8080/api";
+
+const api = axios.create({
+    baseURL: API_URL,
+});
+
+
+api.interceptors.req.use(
+    (config) => {
+        const userId = localStorage.getItem("userId");
+        if (userId) {
+            config.headers['X-User-ID'] = userId;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
+
+export const getActivities = () => api.get("/activities");
+export const addActivity = (activity) => api.post("/activities", activity);
+export const getActivityDetails = () => api.get("/recommendations/activity/${id}");
