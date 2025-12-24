@@ -40,17 +40,7 @@ services:
       - postgres
     restart: unless-stopped
 
-# General Tab:
-# Name: Fitness DB
-# Connection Tab:
-# Host: postgres (container name, NOT localhost!)
-# Port: 5432
-# Maintenance database: fitness_user_db
-# Username: postgres
-# Password: postgres
-
-
-# MongoDB for Activity & AI Services
+  # MongoDB for Activity & AI Services
   mongodb:
     image: mongo:6.0
     container_name: fitness-mongodb

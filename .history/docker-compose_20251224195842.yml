@@ -51,6 +51,7 @@ services:
 
 
 # MongoDB for Activity & AI Services
+
   mongodb:
     image: mongo:6.0
     container_name: fitness-mongodb

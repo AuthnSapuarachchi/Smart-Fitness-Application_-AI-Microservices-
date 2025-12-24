@@ -48,8 +48,6 @@ services:
 # Maintenance database: fitness_user_db
 # Username: postgres
 # Password: postgres
-
-
 # MongoDB for Activity & AI Services
   mongodb:
     image: mongo:6.0

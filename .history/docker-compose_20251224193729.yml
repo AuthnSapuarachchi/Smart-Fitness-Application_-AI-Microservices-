@@ -40,17 +40,7 @@ services:
       - postgres
     restart: unless-stopped
 
-# General Tab:
-# Name: Fitness DB
-# Connection Tab:
-# Host: postgres (container name, NOT localhost!)
-# Port: 5432
-# Maintenance database: fitness_user_db
-# Username: postgres
-# Password: postgres
-
-
-# MongoDB for Activity & AI Services
+  # MongoDB for Activity & AI Services
   mongodb:
     image: mongo:6.0
     container_name: fitness-mongodb
@@ -65,22 +55,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
-
-  # Mongo Express - MongoDB Management Tool
-  mongo-express:
-    image: mongo-express:latest
-    container_name: fitness-mongo-express
-    environment:
-      ME_CONFIG_MONGODB_URL: mongodb://mongodb:27017/
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: admin
-    ports:
-      - "8082:8081"
-    networks:
-      - fitness-network
-    depends_on:
-      - mongodb
     restart: unless-stopped
 
   # RabbitMQ Message Broker
@@ -132,8 +106,6 @@ services:
 # VOLUMES (Data Persistence)
 volumes:
   postgres_data:
-    driver: local
-  pgadmin_data:
     driver: local
   mongodb_data:
     driver: local
