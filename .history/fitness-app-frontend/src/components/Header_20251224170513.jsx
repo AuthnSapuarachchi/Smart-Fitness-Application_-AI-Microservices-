@@ -34,7 +34,7 @@ const Header = ({ user, handleLogout }) => {
               backgroundClip: 'text'
             }}
           >
-            AuthGain Fitness Tracker
+            AFitness Tracker
           </Typography>
         </Box>
 
