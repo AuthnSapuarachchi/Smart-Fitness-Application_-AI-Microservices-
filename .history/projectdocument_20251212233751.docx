@@ -1,0 +1,149 @@
+PROJECT DATA COLLECTION FOR RESUME & LINKEDIN
+Here's the comprehensive information extracted from your AI Fitness Microservice Project:
+
+PROJECT OVERVIEW
+Project Name: EmbarkX AI Fitness Microservice Project
+Author: AUTHN SAPUARACHCHI (License: MIT License 2025)
+Project Type: Full-stack, cloud-native, distributed microservices architecture
+Domain: Fitness & Health - AI-powered activity tracking and personalized recommendations
+
+ARCHITECTURE & INFRASTRUCTURE
+Microservices Architecture (6 Independent Services):
+
+Activity Service - Core activity tracking and logging
+AI Service - AI-powered recommendations and insights
+User Service - User management and authentication
+Config Server - Centralized configuration management
+Eureka Server - Service discovery and registry
+API Gateway - Request routing and security layer
+Frontend Application - React-based user interface
+
+BACKEND TECHNOLOGIES
+Framework & Runtime:
+
+Java 21
+Spring Boot 3.5.8
+Spring Cloud 2025.0.0 (latest)
+Core Backend Technologies:
+
+Spring Cloud Gateway (API Gateway with WebFlux)
+Spring Cloud Config Server (Centralized configuration)
+Netflix Eureka (Service Discovery)
+Spring Data JPA & MongoDB (Dual Database Support)
+RabbitMQ (Message Queue for async processing)
+Spring WebFlux (Reactive Programming)
+Spring OAuth2 / Keycloak Integration (OAuth2-PKCE flow)
+Spring Validation (Data validation)
+Jakarta Persistence API
+Project Lombok (Code generation)
+
+Databases:
+
+MongoDB (Activities & Recommendations - NoSQL)
+PostgreSQL (User Management - Relational)
+External Services:
+
+Google Gemini AI API (for generating recommendations)
+Keycloak (OAuth2 authentication server)
+
+FRONTEND TECHNOLOGIES
+Framework & Build:
+
+React 19.2.0
+Vite 7.2.4 (Modern build tool)
+React Router 7.10.1 (Navigation)
+React Router DOM 7.10.1
+UI & State Management:
+
+Material-UI (MUI) 7.3.6 (@mui/material)
+Emotion (CSS-in-JS) - @emotion/react 11.14.0, @emotion/styled 11.14.1
+Redux Toolkit 2.11.1 (@reduxjs/toolkit)
+React-Redux 9.2.0 (State management)
+HTTP & Authentication:
+
+Axios 1.13.2 (API calls)
+React-OAuth2-Code-PKCE 1.23.4 (OAuth2 PKCE implementation)
+Development Tools:
+
+ESLint 9.39.1 (Code linting)
+Vite Plugin React 5.1.1
+
+KEY FEATURES & FUNCTIONALITY
+Activity Tracking Features:
+
+Log fitness activities (Running, Cycling, Swimming, etc.)
+Track duration, calories burned, start time
+Store additional custom metrics
+Retrieve user activity history
+Get individual activity details
+AI & Recommendation Engine:
+
+Real-time activity processing via RabbitMQ message queue
+Google Gemini API integration for AI-powered insights
+Generate personalized workout recommendations
+Provide safety suggestions
+Activity improvement tips
+Store recommendations in MongoDB
+User Management:
+
+User registration and authentication
+Keycloak OAuth2 integration (PKCE flow)
+User profile management
+User validation across microservices
+Role-based access (User role enum)
+Gateway & API Management:
+
+Centralized API Gateway
+OAuth2 resource server configuration
+Request routing to appropriate microservices
+User context propagation (X-User-ID headers)
+Service Discovery & Config:
+
+Dynamic service discovery via Eureka
+Centralized config server for all microservices
+Environment-specific configurations
+
+ARCHITECTURAL PATTERNS & CONCEPTS IMPLEMENTED
+Microservices Architecture - Independent, scalable services
+Event-Driven Architecture - RabbitMQ for async activity processing
+API Gateway Pattern - Spring Cloud Gateway as single entry point
+Service Discovery Pattern - Eureka for dynamic service registration
+Centralized Configuration - Spring Cloud Config Server
+OAuth2 Security - PKCE flow with Keycloak
+Reactive Programming - Spring WebFlux for non-blocking I/O
+Database per Service - MongoDB & PostgreSQL segregation
+Message Queue Pattern - RabbitMQ for decoupled services
+DTO Pattern - Request/Response objects for API contracts
+
+API ENDPOINTS & OPERATIONS
+Activity Service:
+
+POST /api/activities - Track new activity
+GET /api/activities - Get user's all activities
+GET /api/activities/{activityId} - Get specific activity details
+Recommendation Service:
+
+Get user recommendations
+Get activity-specific recommendations
+User Service:
+
+POST /api/users/register - User registration
+GET /api/users/profile/{userId} - Get user profile
+User validation endpoints
+
+FRONTEND COMPONENTS & PAGES
+React Components:
+
+ActivityForme.jsx - Form to add new activities (Type, Duration, Calories)
+ActivityList.jsx - Display user's activity history
+ActivityDetail.jsx - Detailed view of individual activities
+App.jsx - Main app with routing, authentication handling
+
+Features:
+
+OAuth2 PKCE authentication flow
+Token management (localStorage)
+User ID handling across requests
+Material-UI form components
+Activity type selection (dropdown)
+Real-time form submission with error handling

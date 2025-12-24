@@ -38,11 +38,11 @@ const ActivityForme = ({ onActivityAdded }) => {
   }
 
   return (
-    <Paper sx={{ p: 3, mb: 3, width: '100%', maxWidth: 'none' }}>
-      <Typography variant="h5" sx={{ mb: 3, fontWeight: 'bold' }}>
+    <Paper sx={{ p: 3, mb: 3, width: '100%' }}>
+      <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold' }}>
         Add New Activity
       </Typography>
-      <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
+      <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <FormControl fullWidth>
           <InputLabel>Activity Type</InputLabel>
           <Select
@@ -53,8 +53,6 @@ const ActivityForme = ({ onActivityAdded }) => {
             <MenuItem value="RUNNING">Running</MenuItem>
             <MenuItem value="CYCLING">Cycling</MenuItem>
             <MenuItem value="SWIMMING">Swimming</MenuItem>
-            <MenuItem value="WALKING">Walking</MenuItem>
-            <MenuItem value="GYM">GYM</MenuItem>
           </Select>
         </FormControl>
 

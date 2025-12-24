@@ -53,7 +53,7 @@ const ActivityForme = ({ onActivityAdded }) => {
             <MenuItem value="RUNNING">Running</MenuItem>
             <MenuItem value="CYCLING">Cycling</MenuItem>
             <MenuItem value="SWIMMING">Swimming</MenuItem>
-            <MenuItem value="WALKING">Walking</MenuItem>
+            <MenuItem value="WALKING">Wa</MenuItem>
             <MenuItem value="GYM">GYM</MenuItem>
           </Select>
         </FormControl>

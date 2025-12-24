@@ -139,7 +139,7 @@ function App() {
                 backgroundClip: 'text'
               }}
             >
-              AuthGain Fitness Tracker
+              Fitness Tracker
             </Typography>
           </Box>
 
@@ -449,7 +449,7 @@ function App() {
                       backgroundClip: 'text'
                     }}
                   >
-                    AuthGain Fitness App
+                    AFitness App
                   </Typography>
                   <Typography 
                     variant="subtitle1" 

@@ -1,0 +1,47 @@
+PROJECT DATA COLLECTION FOR RESUME & LINKEDIN
+Here's the comprehensive information extracted from your AI Fitness Microservice Project:
+
+PROJECT OVERVIEW
+Project Name: EmbarkX AI Fitness Microservice Project
+Author: AUTHN SAPUARACHCHI (License: MIT License 2025)
+Project Type: Full-stack, cloud-native, distributed microservices architecture
+Domain: Fitness & Health - AI-powered activity tracking and personalized recommendations
+
+ARCHITECTURE & INFRASTRUCTURE
+Microservices Architecture (6 Independent Services):
+
+Activity Service - Core activity tracking and logging
+AI Service - AI-powered recommendations and insights
+User Service - User management and authentication
+Config Server - Centralized configuration management
+Eureka Server - Service discovery and registry
+API Gateway - Request routing and security layer
+Frontend Application - React-based user interface
+
+BACKEND TECHNOLOGIES
+Framework & Runtime:
+
+Java 21
+Spring Boot 3.5.8
+Spring Cloud 2025.0.0 (latest)
+Core Backend Technologies:
+
+Spring Cloud Gateway (API Gateway with WebFlux)
+Spring Cloud Config Server (Centralized configuration)
+Netflix Eureka (Service Discovery)
+Spring Data JPA & MongoDB (Dual Database Support)
+RabbitMQ (Message Queue for async processing)
+Spring WebFlux (Reactive Programming)
+Spring OAuth2 / Keycloak Integration (OAuth2-PKCE flow)
+Spring Validation (Data validation)
+Jakarta Persistence API
+Project Lombok (Code generation)
+
+Databases:
+
+MongoDB (Activities & Recommendations - NoSQL)
+PostgreSQL (User Management - Relational)
+External Services:
+
+Google Gemini AI API (for generating recommendations)
+Keycloak (OAuth2 authentication server)
