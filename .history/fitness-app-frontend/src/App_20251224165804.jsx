@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import { Button, Container, Box, Typography, CircularProgress } from '@mui/material'
+import { Button, Container, Box, Typography, CircularProgress, Grid, Card } from '@mui/material'
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter'
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun'
+import ActivityForme from './components/ActivityForme'
+import ActivityList from './components/ActivityList'
 import ActivityDetail from './components/ActivityDetail'
 import Header from './components/Header'
-import ActivityPage from './Page/ActivityPage'
+import WelcomeSection from './components/WelcomeSection'
 import FitnessBackground from './background/FitnessBackground'
 import { Route, Routes, BrowserRouter, Navigate } from 'react-router'
 
@@ -100,6 +103,11 @@ function App() {
     setUser(null)
   }
 
+  
+
+  // Fitness Background Component
+  
+
   if (loading) {
     return (
       <Container maxWidth="sm">
@@ -120,7 +128,7 @@ function App() {
             <Header user={user} handleLogout={handleLogout} />
             <Container maxWidth={false} sx={{ px: { xs: 2, sm: 3, md: 4 }, py: 4 }}>
               <Routes>
-                <Route path="/" element={<ActivityPage user={user} />} />
+                <Route path="/" element={<ActivityPage />} />
                 <Route path="/activities/:id" element={<ActivityDetail />} />
               </Routes>
             </Container>
