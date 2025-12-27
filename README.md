@@ -14,7 +14,7 @@
 
 The application is composed of **6 distributed microservices** orchestrated by Netflix Eureka and communicating via a mix of synchronous REST APIs (OpenFeign) and asynchronous events (RabbitMQ).
 
-![Architecture Diagram](./architecture-diagram.png)
+![Architecture Diagram](./architecture-diagrem.png)
 
 ### Microservices Breakdown
 
