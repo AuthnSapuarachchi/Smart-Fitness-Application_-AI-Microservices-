@@ -170,7 +170,6 @@ volumes:
   keycloak_data:
     driver: local
   keycloak_postgres_data:
-    driver: local
 
 networks:
   fitness-network:

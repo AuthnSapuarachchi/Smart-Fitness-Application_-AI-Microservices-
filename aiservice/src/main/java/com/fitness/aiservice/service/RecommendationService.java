@@ -1,5 +1,6 @@
 package com.fitness.aiservice.service;
 
+import com.fitness.aiservice.exception.RecommendationNotFoundException;
 import com.fitness.aiservice.model.Recommendation;
 import com.fitness.aiservice.repository.RecommendationRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,6 @@ public class RecommendationService {
 
     public Recommendation getActivityRecommendation(String activityId) {
         return recommendationRepository.findByActivityId(activityId)
-                .orElseThrow(() -> new RuntimeException("No Recommendation found for this activity: " + activityId));
+                .orElseThrow(() -> new RecommendationNotFoundException("Analysis in progress for activity: " + activityId));
     }
 }

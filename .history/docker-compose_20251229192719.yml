@@ -104,58 +104,7 @@ services:
       retries: 5
     restart: unless-stopped
 
-  keycloak-db:
-    image: postgres:15
-    container_name: fitness-keycloak-db
-    environment:
-      POSTGRES_DB: keycloak
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: keycloak_password
-    volumes:
-      - keycloak_postgres_data:/var/lib/postgresql/data
-    networks:
-      - fitness-network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U keycloak"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  # 2. UPDATED: Keycloak Service
-  keycloak:
-    image: quay.io/keycloak/keycloak:23.0
-    container_name: fitness-keycloak
-    depends_on:
-      keycloak-db:
-        condition: service_healthy
-    environment:
-      # Admin Setup
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-      
-      # Database Connection (The new part)
-      KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/keycloak
-      KC_DB_USERNAME: keycloak
-      KC_DB_PASSWORD: keycloak_password
-      
-      # HTTP Configuration
-      KC_HTTP_PORT: 8080
-      KC_HOSTNAME_STRICT: "false"
-      KC_HOSTNAME_STRICT_HTTPS: "false"
-      KC_HTTP_ENABLED: "true"
-      KC_PROXY: "edge" # Often needed behind Docker/Gateways
-    command: start-dev
-    ports:
-      - "8181:8080"
-    networks:
-      - fitness-network
-    # Note: We removed the old volume because data is now in the DB container
-    healthcheck:
-      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/8080; echo -e 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3; cat <&3 | grep -q '200 OK'"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
+  
 
 # VOLUMES (Data Persistence)
 volumes:
@@ -168,8 +117,6 @@ volumes:
   rabbitmq_data:
     driver: local
   keycloak_data:
-    driver: local
-  keycloak_postgres_data:
     driver: local
 
 networks:
