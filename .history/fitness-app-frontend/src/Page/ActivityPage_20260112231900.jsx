@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Card, Typography } from '@mui/material'
+import { Box, Grid, Card, Typography } from '@mui/material'
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter'
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun'
 import WelcomeSection from '../components/WelcomeSection'
