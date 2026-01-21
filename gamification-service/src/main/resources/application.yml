@@ -1,0 +1,33 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: gamification-service
+
+  config:
+    import: "optional:configserver:http://localhost:8888/"
+
+  # Database Connection (Connecting to Docker via Localhost)
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fitness_gamification_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update # Automatically create tables
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # RabbitMQ Connection (Connecting to Docker via Localhost)
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

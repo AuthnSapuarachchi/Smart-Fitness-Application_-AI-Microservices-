@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Card, Typography } from '@mui/material'
+import { Box, Grid, Card, Typography } from '@mui/material'
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter'
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun'
 import WelcomeSection from '../components/WelcomeSection'
@@ -8,27 +8,15 @@ import ActivityList from '../components/ActivityList'
 
 const ActivityPage = ({ user }) => {
   return (
-    <Box sx={{ 
-      width: '100%',
-      maxWidth: '1400px',
-      margin: '0 auto',
-      padding: { xs: 2, md: 3 }
-    }}>
+    <Box sx={{ width: '100%' }}>
       <WelcomeSection user={user} />
-      
-      <Box sx={{ 
-        display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' },
-        gap: 3,
-        mt: 3,
-        alignItems: 'stretch'
-      }}>
+      <Grid container spacing={3} sx={{ width: '100%' }}>
         {/* Left Side - Activity Form */}
-        <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Card 
             elevation={0}
             sx={{ 
-              height: '100%',
+              width: '100%',
               backgroundColor: 'rgba(255, 255, 255, 0.95)',
               backdropFilter: 'blur(10px)',
               borderRadius: 3,
@@ -61,10 +49,10 @@ const ActivityPage = ({ user }) => {
             </Typography>
             <ActivityForme onActivityAdded={() => window.location.reload()} />
           </Card>
-        </Box>
+        </Grid>
 
         {/* Right Side - Activity List */}
-        <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Grid item xs={12} md={6}>
           <Card
             elevation={0}
             sx={{ 
@@ -91,8 +79,8 @@ const ActivityPage = ({ user }) => {
             </Box>
             <ActivityList />
           </Card>
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
     </Box>
   )
 }
